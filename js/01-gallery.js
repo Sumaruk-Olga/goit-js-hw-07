@@ -1,7 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+// console.log(galleryItems);
 
 
 const gallery = document.querySelector('.gallery');
@@ -29,7 +29,7 @@ gallery.addEventListener('click', handlerOpenImageClick);
 function handlerOpenImageClick(evt) {
     evt.preventDefault();
     if (evt.target.nodeName !== 'IMG') { return };
-    console.log(evt.target.dataset.source);
+    // console.log(evt.target.dataset.source);
     
     
     const instance = basicLightbox.create(`
@@ -39,11 +39,11 @@ function handlerOpenImageClick(evt) {
     instance.show();
 
 
-    window.addEventListener('keydown', handleEscapeClick);
+    window.addEventListener('keydown', handleEscapeClick, {once:true});
 
     function handleEscapeClick(evt) {
-        console.log(evt.code);// Escape
-        if (evt.code === 'Escape') {            
+        // console.log(evt.code);// Escape
+            if (evt.code === 'Escape') {            
             instance.close();
       }
   }
