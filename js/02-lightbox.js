@@ -18,20 +18,13 @@ const createGallery = galleryItems.map(item => createGalleryItem(item)).join('')
 
 gallery.insertAdjacentHTML('beforeend', createGallery);
 
-gallery.addEventListener('click', handlerOpenImageClick);
 
-function handlerOpenImageClick(evt) {
-    evt.preventDefault();
-    if (evt.target.nodeName !== 'IMG') { return };
     
     const lightbox = new SimpleLightbox('.gallery a', { 
         captionsData: 'alt',
         captionDelay: 250,        
     });
     
-    
-};
-
 
 // captionsData	title	string	get the caption from given attribute
 // captionDelay	0	int	adds a delay before the caption shows (in ms)

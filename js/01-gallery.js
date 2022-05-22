@@ -34,12 +34,12 @@ function handlerOpenImageClick(evt) {
     
     const instance = basicLightbox.create(`
 		<img width="1000" height="800" src="${evt.target.dataset.source}">
-	`);
+	`, window.addEventListener('keydown', handleEscapeClick, {once:true}));
     
     instance.show();
 
 
-    window.addEventListener('keydown', handleEscapeClick, {once:true});
+    
 
     function handleEscapeClick(evt) {
         // console.log(evt.code);// Escape
